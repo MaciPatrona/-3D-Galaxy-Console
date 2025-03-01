@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #0a0a2a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
+    z-index: -1;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+#galaxy-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: galaxy-rotate 100s linear infinite;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.stars:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: stars-move 50s linear infinite;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+}
+
+.nebula {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background: 
+        radial-gradient(circle at 60% 40%, #7158e2 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, #3742fa 0%, transparent 40%),
+        radial-gradient(circle at 30% 30%, #1e90ff 0%, transparent 60%);
+    filter: blur(50px);
+    animation: nebula-move 30s ease infinite;
+}
+
+.twinkling {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: twinkle 1s linear infinite;
+    background: transparent;
+}
+
+.twinkling:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at random(100) random(100), #fff, rgba(0,0,0,0));
+    animation: twinkle 1s ease infinite;
+}
+
+@keyframes galaxy-rotate {
+    0% {
+        transform: rotateX(75deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(75deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+@keyframes stars-move {
+    from {
+        transform: translateZ(0px);
+    }
+    to {
+        transform: translateZ(200px);
+    }
+}
+
+@keyframes nebula-move {
+    0%, 100% {
+        transform: translate(-5%, -5%) scale(1.1);
+    }
+    50% {
+        transform: translate(5%, 5%) scale(0.9);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.console-container {
+    width: 800px;
+    max-width: 90%;
+    background: rgba(10, 10, 40, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(100, 100, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 100, 255, 0.1);
+}
+
+.console-header {
+    padding: 10px;
+    background: rgba(40, 40, 40, 0.9);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.console-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.console-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.console-title {
+    color: #fff;
+    margin-left: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.console {
+    padding: 20px;
+    height: 400px;
+    overflow-y: auto;
+    color: #fff;
+}
+
+#output {
+    margin-bottom: 20px;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prompt {
+    color: #27c93f;
+}
+
+#command-input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+}
+
+/* Custom Scrollbar */
+.console::-webkit-scrollbar {
+    width: 8px;
+}
+
+.console::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.console::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.console::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+} 

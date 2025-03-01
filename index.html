@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Galaxy Console</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <div id="galaxy-container"></div>
+        <div class="stars"></div>
+        <div class="nebula"></div>
+        <div class="twinkling"></div>
+    </div>
+    
+    <div class="console-container">
+        <div class="console-header">
+            <div class="console-buttons">
+                <span class="console-button red"></span>
+                <span class="console-button yellow"></span>
+                <span class="console-button green"></span>
+            </div>
+            <div class="console-title">Terminal</div>
+        </div>
+        <div class="console">
+            <div id="output"></div>
+            <div class="input-line">
+                <span class="prompt">$</span>
+                <input type="text" id="command-input" autofocus>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

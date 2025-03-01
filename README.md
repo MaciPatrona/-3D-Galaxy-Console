@@ -1,5 +1,7 @@
 # 🌌 3D Galaxy Console
 
+![Galaxy Console Preview](https://github.com/MaciPatrona/-3D-Galaxy-Console/blob/main/Screenshot%202025-03-02%20002301.png)
+
 ## 🚀 About the Project
 **3D Galaxy Console** is a simple, interactive command-line interface with a **galaxy theme**. Built with **HTML, CSS, and JavaScript**, this lightweight web-based program lets users explore the cosmos through a handful of fun commands.
 
@@ -35,6 +37,8 @@ Want to improve this project or add more commands? Feel free to fork and contrib
 - 🔗 **GitHub Repo:** [(https://github.com/MaciPatrona)]
 
 🚀 *Explore the galaxy—one command at a time!*
+
+
 
 
 
